@@ -122,7 +122,7 @@ class LD06Decoder(Node):
             index = int(round(signed_angle + 180.0))
 
             if 0 <= index < 360:
-                if 0.12 <= distance_m <= 12.0:
+                if 0.12 <= distance_m <= 4.0:
                     self.ranges[index] = distance_m
                     self.intensities[index] = float(intensity)
                 else:
@@ -150,7 +150,7 @@ class LD06Decoder(Node):
         msg.scan_time = 0.1
 
         msg.range_min = 0.12
-        msg.range_max = 12.0
+        msg.range_max = 4.0
 
         msg.ranges = list(self.ranges)
         msg.intensities = list(self.intensities)

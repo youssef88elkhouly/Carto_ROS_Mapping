@@ -2,9 +2,14 @@
 
 For launching
 
-pkill -f static_transform_publisher
 pkill -f slam_toolbox
-
+pkill -f static_transform_publisher
+pkill -f nav2
+pkill -f amcl
+pkill -f map_server
+pkill -f lifecycle_manager
+pkill -f rf2o
+pkill -f simple_lidar
 
 Terminal 1 - LiDAR decoder
 
@@ -41,7 +46,7 @@ source /opt/ros/humble/setup.bash
 source ~/lidar_ws/install/setup.bash
 
 ros2 launch slam_toolbox online_async_launch.py \
-  slam_params_file:=/home/khouly/lidar_ws/config/slam_params.yaml
+  slam_params_file:=/home/khouly/lidar_ws/config/slam_clean.yaml
   
   
 Terminal 5 - RViz
